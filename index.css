@@ -1,17 +1,174 @@
-/* Base styles (mobile-first approach) */
+/* Base styles */
+:root {
+    --dark-bg: #081b29;
+    --dark-text: #ffffff;
+    --dark-primary: #00abf0;
+    --dark-secondary: #0a2a3a;
+    
+    --light-bg: #f5f5f5;
+    --light-text: #333333;
+    --light-primary: #0077b6;
+    --light-secondary: #e3f2fd;
+    
+    --transition: all 0.3s ease;
+}
+
 body {
     margin: 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: #081b29;
+    transition: var(--transition);
 }
 
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+body.dark-mode nav {
+    background-color: var(--dark-bg);
+}
+
+body.dark-mode nav ul {
+    background-color: var(--dark-bg);
+}
+
+body.dark-mode nav a {
+    color: var(--dark-text);
+}
+
+body.dark-mode nav a:hover {
+    color: var(--dark-primary);
+}
+
+body.dark-mode footer {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+body.dark-mode .home h1,
+body.dark-mode .home h2,
+body.dark-mode .home p,
+body.dark-mode .about h1,
+body.dark-mode .about1,
+body.dark-mode .about2,
+body.dark-mode .container3 h1,
+body.dark-mode .container4 h1,
+body.dark-mode .proto2 h3,
+body.dark-mode .proto2 p,
+body.dark-mode .proto4 h3,
+body.dark-mode .proto4 p,
+body.dark-mode .proto6 h3,
+body.dark-mode .proto6 p,
+body.dark-mode .p2_2 h3,
+body.dark-mode .p2_2 p,
+body.dark-mode .p2_4 h3,
+body.dark-mode .p2_4 p,
+body.dark-mode .p2_6 h3,
+body.dark-mode .p2_6 p {
+    color: var(--dark-text);
+}
+
+body.dark-mode .line {
+    background-color: var(--dark-bg);
+}
+
+body.dark-mode .container {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .contact-form label {
+    color: var(--dark-text);
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--dark-text);
+    border: 1px solid var(--dark-primary);
+}
+
+/* Light Mode Styles */
+body.light-mode {
+    background-color: var(--light-bg);
+    color: var(--light-text);
+}
+
+body.light-mode nav {
+    background-color: var(--light-bg);
+}
+
+body.light-mode nav ul {
+    background-color: var(--light-bg);
+}
+
+body.light-mode nav a {
+    color: var(--light-text);
+}
+
+body.light-mode nav a:hover {
+    color: var(--light-primary);
+}
+
+body.light-mode footer {
+    background-color: var(--light-bg);
+    color: var(--light-text);
+}
+
+body.light-mode .home h1,
+body.light-mode .home h2,
+body.light-mode .home p,
+body.light-mode .about h1,
+body.light-mode .about1,
+body.light-mode .about2,
+body.light-mode .container3 h1,
+body.light-mode .container4 h1,
+body.light-mode .proto2 h3,
+body.light-mode .proto2 p,
+body.light-mode .proto4 h3,
+body.light-mode .proto4 p,
+body.light-mode .proto6 h3,
+body.light-mode .proto6 p,
+body.light-mode .p2_2 h3,
+body.light-mode .p2_2 p,
+body.light-mode .p2_4 h3,
+body.light-mode .p2_4 p,
+body.light-mode .p2_6 h3,
+body.light-mode .p2_6 p {
+    color: var(--light-text);
+}
+
+body.light-mode strong {
+    color: var(--light-primary);
+}
+
+body.light-mode .line {
+    background-color: var(--light-bg);
+}
+
+body.light-mode .container {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+body.light-mode .contact-form label {
+    color: var(--light-text);
+}
+
+body.light-mode input,
+body.light-mode textarea {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: var(--light-text);
+    border: 1px solid var(--light-primary);
+}
+
+/* Common Styles */
 nav {
     top: 0;
     width: 100%;
     position: fixed;
     left: 0;
-    background-color: #081b29;
     z-index: 1000;
+    transition: var(--transition);
 }
 
 nav ul {
@@ -19,7 +176,7 @@ nav ul {
     overflow: hidden;
     margin: 0;
     padding: 10px;
-    background-color: #081b29;
+    transition: var(--transition);
 }
 
 nav li {
@@ -28,23 +185,42 @@ nav li {
 
 nav a {
     padding: 10px 15px;
-    transition: background-color 0.3s;
+    transition: var(--transition);
     text-decoration: none;
     font-size: 16px;
-    color: white;
     display: block;
 }
 
-nav a:hover {
-    color: #00abf0;
+.logo {
+    float: left;
+    font-weight: bold;
+    font-size: 20px !important;
+    padding: 10px 20px !important;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 10px 15px;
+    position: relative;
+}
+
+.theme-toggle .fa-sun {
+    display: none;
+}
+
+.theme-toggle .fa-moon {
+    display: inline-block;
 }
 
 footer {
-    background-color: #081b29;
-    color: #ffffff;
     text-align: center;
     padding: 15px;
     font-size: 16px;
+    transition: var(--transition);
 }
 
 .container1 {
@@ -65,25 +241,25 @@ footer {
 .home h1 {
     font-size: 36px;
     font-weight: 700;
-    color: white;
     margin-bottom: 10px;
+    transition: var(--transition);
 }
 
 .home h2 {
     font-size: 24px;
     font-weight: 700;
-    color: #00abf0;
     margin-bottom: 15px;
+    transition: var(--transition);
 }
 
 .home p {
     font-size: 16px;
-    color: white;
     line-height: 1.5;
+    transition: var(--transition);
 }
 
 strong {
-    color: #00abf0;
+    transition: var(--transition);
 }
 
 .home1 {
@@ -101,8 +277,13 @@ strong {
 .social {
     margin: 0 10px;
     display: inline-block;
-    color: #00abf0;
     font-size: 25px;
+    transition: var(--transition);
+}
+
+.social a {
+    color: inherit;
+    transition: var(--transition);
 }
 
 .container2 {
@@ -130,29 +311,29 @@ strong {
     text-align: center;
     font-size: 18px;
     font-weight: 700;
-    color: azure;
     margin-bottom: 30px;
 }
 
 .about h1 {
     margin: 0 0 20px;
     font-size: 36px;
+    transition: var(--transition);
 }
 
 .line {
     height: 4px;
     border: none;
-    background-color: #081b29;
     margin: 10px auto 20px;
     width: 80%;
+    transition: var(--transition);
 }
 
 .about1, .about2 {
-    color: azure;
     line-height: 1.6;
     padding: 0 20px;
     margin: 20px 0;
     text-align: center;
+    transition: var(--transition);
 }
 
 .container3 {
@@ -161,10 +342,10 @@ strong {
 }
 
 .container3 h1 {
-    color: white;
     font-size: 36px;
     text-align: center;
     margin-bottom: 30px;
+    transition: var(--transition);
 }
 
 .project {
@@ -199,36 +380,51 @@ strong {
 
 .proto2, .p2_2, .proto4, .p2_4, .proto6, .p2_6 {
     height: auto;
-    color: white;
     padding: 15px;
     text-align: center;
-}
-
-.proto2 button, .p2_2 button, .proto4 button, .p2_4 button, .proto6 button, .p2_6 button {
-    padding: 10px 20px;
-    background-color: #00abf0;
-    color: #081b29;
-    font-size: 15px;
-    font-weight: bold;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-top: 10px;
-}
-
-.proto2 button:hover, .p2_2 button:hover, .proto4 button:hover, .p2_4 button:hover, .proto6 button:hover, .p2_6 button:hover {
-    background-color: white;
-    color: #00abf0;
+    transition: var(--transition);
 }
 
 .proto2 h3, .p2_2 h3, .proto4 h3, .p2_4 h3, .proto6 h3, .p2_6 h3 {
     margin: 10px 0;
+    transition: var(--transition);
 }
 
 .proto2 p, .p2_2 p, .proto4 p, .p2_4 p, .proto6 p, .p2_6 p {
     font-family: 'Courier New', Courier, monospace;
     line-height: 1.5;
+    transition: var(--transition);
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 10px;
+}
+
+body.dark-mode button {
+    background-color: var(--dark-primary);
+    color: var(--dark-bg);
+}
+
+body.light-mode button {
+    background-color: var(--light-primary);
+    color: var(--light-bg);
+}
+
+body.dark-mode button:hover {
+    background-color: var(--dark-text);
+    color: var(--dark-primary);
+}
+
+body.light-mode button:hover {
+    background-color: var(--light-text);
+    color: var(--light-primary);
 }
 
 .container4 {
@@ -237,10 +433,10 @@ strong {
 }
 
 .container4 h1 {
-    color: white;
     font-size: 36px;
     text-align: center;
     margin-bottom: 30px;
+    transition: var(--transition);
 }
 
 .skills {
@@ -248,7 +444,7 @@ strong {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-color: #081b29;
+    transition: var(--transition);
 }
 
 .skills img {
@@ -256,13 +452,28 @@ strong {
     height: 120px;
     border-radius: 50%;
     margin: 15px;
-    border: 3px solid white;
+    border: 3px solid;
     transition: transform 0.5s ease-in-out;
+}
+
+body.dark-mode .skills img {
+    border-color: var(--dark-text);
+}
+
+body.light-mode .skills img {
+    border-color: var(--light-primary);
 }
 
 .skills img:hover {
     transform: scale(1.1);
-    box-shadow: 0px 0px 20px white;
+}
+
+body.dark-mode .skills img:hover {
+    box-shadow: 0px 0px 20px var(--dark-text);
+}
+
+body.light-mode .skills img:hover {
+    box-shadow: 0px 0px 20px var(--light-primary);
 }
 
 .container5 {
@@ -272,53 +483,37 @@ strong {
 
 .container5 h1 {
     text-align: center;
-    color: white;
     font-size: 36px;
     margin-bottom: 30px;
+    transition: var(--transition);
 }
 
 .contact-form {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
+    transition: var(--transition);
 }
 
 .contact {
     margin: 20px 0;
-    color: gray;
 }
 
 label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
-    color: #333;
+    transition: var(--transition);
 }
 
 input, textarea {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
-    border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
-}
-
-button {
-    background-color: #333;
-    color: #fff;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #00abf0;
+    transition: var(--transition);
 }
 
 /* Tablet styles */
